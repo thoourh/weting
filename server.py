@@ -12,23 +12,11 @@ while(isContinue):
     print("Message recevied from client: ", data.decode('utf-8'))
 
     msg = input("Enter the msg: ")
-
+    if msg == "exit":
+        isContinue = False
+        break
     ConnectionSock.send(msg.encode('utf-8'))
     print("Message sent to  client")
-
-    print("connection keep going?")
-    
-    choice = True
-    while(choice):
-        ss = input("Enter Y/N: ")
-        if ss=="Y":
-            isContinue = True
-            choice = False
-        elif ss=="N":
-            isContinue = False
-            choice = False
-        else:
-            choice = True
             
 
 
